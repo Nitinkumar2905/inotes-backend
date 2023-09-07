@@ -8,7 +8,7 @@ const port = 5000;
 app.use(express.json());
 app.use(cors(
     {
-    origin: ["https://inotes-f.vercel.app/"],
+    origin: ["https://inotes-f.vercel.app/login"],
     methods: ["POST", "DELETE", "GET","PUT"],
     credentials: true,
   }
