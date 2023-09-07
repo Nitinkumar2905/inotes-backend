@@ -7,16 +7,16 @@ const app = express();
 const port = 5000;
 app.use(express.json());
 app.use(cors(
-  //   {
-  //   origin: ["https://nitinkumar2905.vercel.app"],
-  //   methods: ["POST", "DELETE", "GET"],
-  //   credentials: true,
-  // }
+    {
+    origin: ["https://inotes-f.vercel.app/"],
+    methods: ["POST", "DELETE", "GET","PUT"],
+    credentials: true,
+  }
 ));
 
-// app.get("/", (req,res)=>{
-//   res.json("hello")
-// })
+app.get("/", (req,res)=>{
+  res.json("hello")
+})
 
 // available routes
 app.use("/api/auth", require("./routes/auth"));
