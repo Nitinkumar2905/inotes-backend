@@ -9,13 +9,13 @@ app.use(express.json());
 app.use(
   cors(
     {
-    origin: ["https://inotes-f.vercel.app/"],
-    methods: ["POST", "DELETE", "GET","PUT"],
-    credentials: true,
-  }
-));
+      origin: ["https://inotes-f.vercel.app/"],
+      methods: ["PATACH", "HEAD", "POST", "DELETE", "GET", "PUT"],
+      credentials: true,
+    }
+  ));
 
-app.get("/", (req,res)=>{
+app.get("/", (req, res) => {
   res.json("hello")
 })
 
