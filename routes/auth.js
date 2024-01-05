@@ -1,10 +1,12 @@
 const express = require("express");
 const User = require("../models/User");
+const Notes = require("../models/Notes")
 const router = express.Router();
 const { body, validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const fetchUser = require("../middleware/fetchUser");
+
 
 const JWT_SECRET = "nitin_kumar@2905";
 // Route 1 : Create a user using : Post "/api/auth/createuser" , No login required
@@ -125,6 +127,7 @@ router.delete("/deleteUser/:id", fetchUser, async (req, res) => {
     if (!user) {
       return res.status(404).send("User not found");
     }
+    await Notes.deleteMany({ user })
     await User.findByIdAndDelete(userId);
     res.json("Account deleted successfully");
     console.log("Account deleted successfully");

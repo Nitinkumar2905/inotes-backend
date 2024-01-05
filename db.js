@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const mongoURI =
   "mongodb+srv://nimble2905:nimble2905@cluster0.quzlruu.mongodb.net/inotes?retryWrites=true&w=majority";
+  // const mongoURI = process.env.MONGODB_URI
 
 const connectToMongo = async () => {
   try {
